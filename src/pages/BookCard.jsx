@@ -1,6 +1,8 @@
+import { useOutletContext, useParams } from "react-router-dom"
+
 function BookCard() {
-    const bookstores = []
-    const id = null
+    const { bookstores } = useOutletContext()
+    const { id } = useParams()
 
     const bookstore = bookstores.find(store => store.id === id)
 

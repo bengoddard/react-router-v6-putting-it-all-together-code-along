@@ -1,8 +1,11 @@
 import { useState } from "react"
+import { useOutletContext, useNavigate } from "react-router-dom"
 
 function BookstoreForm() {
   const [name, setName] = useState("")
   const [location, setLocation] = useState("")
+  const { addBookstore } = useOutletContext()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,7 +23,8 @@ function BookstoreForm() {
         return r.json()
     })
     .then(store => {
-        console.log(store)
+        addBookstore(store)
+        navigate(`/bookstores${store.id}`)
     })
     .catch(console.log)
   }

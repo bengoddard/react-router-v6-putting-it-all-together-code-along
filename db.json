@@ -22,6 +22,12 @@
           "title": "Pride and Prejudice",
           "pages": 279,
           "author": "Jane Austen"
+        },
+        {
+          "id": "4fdf8eb6-7453-4371-bf7a-f8d4baf02fe4",
+          "title": "Book 4",
+          "author": "Author 2",
+          "pages": 241
         }
       ]
     },
@@ -80,6 +86,12 @@
           "pages": 423
         }
       ]
+    },
+    {
+      "id": "76c4",
+      "name": "Bookstore 7",
+      "location": "my store",
+      "books": []
     }
   ]
 }
