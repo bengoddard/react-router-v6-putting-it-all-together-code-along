@@ -1,11 +1,12 @@
 import { useState } from "react"
-import { useOutletContext, useParams } from "react-router-dom"
+import { useOutletContext, useParams, useNavigate } from "react-router-dom"
 import { v4 as uuidv4 } from 'uuid'
 
 function BookForm() {
   const [title, setTitle] = useState("")
   const [author, setAuthor] = useState("")
   const [pages, setPages] = useState("")
+  const navigate = useNavigate()
 
   const { bookstores, updateBookstore } = useOutletContext()
   const { id } = useParams()
@@ -36,6 +37,7 @@ function BookForm() {
     })
     .then(updatedBookstore => {
         updateBookstore(updatedBookstore)
+        navigate(`/bookstores${id}/books${newBook.id}`)
     })
     .catch(console.log)
   }
